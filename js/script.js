@@ -18,68 +18,68 @@ var randomNumber = 0;
 $("#shoot").click(function(){
   
  userChoice=  $("#input").val();
-      console.log(userChoice)
+      console.log(userChoice);
     $("#userChoice").text(userChoice);
     
     randomNumber= Math.random();
     
     if(randomNumber<0.333) {
-        computerChoice= "rock"
+        computerChoice= "rock";
       
   
    }else if (randomNumber<0.6666) {
-       computerChoice="paper"
+       computerChoice="paper";
        
-   }else { computerChoice="scissors"
+   }else { computerChoice="scissors";
     }
    
    if (userChoice === "rock"){
        if(computerChoice==="rock") {
-           winner="tie"
+           winner="tie";
        }
        
        if(computerChoice==="paper") {
-           winner="computer"
+           winner="computer";
        }   
        if(computerChoice==="scissors") {
-           winner="user"
+           winner="user";
        }   
    } else if (userChoice === "paper"){
        if(computerChoice==="paper") {
-           winner="tie"
+           winner="tie";
        }
         
            
             if (computerChoice === "scissors"){
-           winner="computer"
+           winner="computer";
             }
            
         
        if(computerChoice==="rock") {
-           winner="user"
+           winner="user";
        }
        
    }
    
    else {
         if(computerChoice==="paper") {
-           winner="user"
+           winner="user";
        }
         
            
             if (computerChoice === "scissors"){
-           winner="tie"
+           winner="tie";
             }
            
         
        if(computerChoice==="rock") {
-           winner="computer"
+           winner="computer";
        }  
-     alert(winner);
+    
        
    }
        
-       
+    alert(winner)  
        
        
        
