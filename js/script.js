@@ -33,51 +33,51 @@ $("#shoot").click(function(){
    }else { computerChoice="scissors";
     }
    
-   if (userChoice === "rock"){
-       if(computerChoice==="rock") {
-           winner="tie";
-       }
+//   if (userChoice === "rock"){
+//       if(computerChoice==="rock") {
+//           winner="tie";
+//       }
        
-       if(computerChoice==="paper") {
-           winner="computer";
-       }   
-       if(computerChoice==="scissors") {
-           winner="user";
-       }   
-   } else if (userChoice === "paper"){
-       if(computerChoice==="paper") {
-           winner="tie";
-       }
+//       if(computerChoice==="paper") {
+//           winner="computer";
+//       }   
+//       if(computerChoice==="scissors") {
+//           winner="user";
+//       }   
+//   } else if (userChoice === "paper"){
+//       if(computerChoice==="paper") {
+//           winner="tie";
+//       }
         
            
-            if (computerChoice === "scissors"){
-           winner="computer";
-            }
+//             if (computerChoice === "scissors"){
+//           winner="computer";
+//             }
            
         
-       if(computerChoice==="rock") {
-           winner="user";
-       }
+//       if(computerChoice==="rock") {
+//           winner="user";
+//       }
        
-   }
+//   }
    
-   else {
-        if(computerChoice==="paper") {
-           winner="user";
-       }
+//   else {
+//         if(computerChoice==="paper") {
+//           winner="user";
+//       }
         
            
-            if (computerChoice === "scissors"){
-           winner="tie";
-            }
+//             if (computerChoice === "scissors"){
+//           winner="tie";
+//             }
            
         
-       if(computerChoice==="rock") {
-           winner="computer";
-       }  
+//       if(computerChoice==="rock") {
+//           winner="computer";
+//       }  
     
        
-   }
+//   }
        
     alert(winner)  
        
@@ -89,7 +89,9 @@ $("#shoot").click(function(){
          
        
        
-   
+   if(computerChoice==="rock"&&userChoice==="paper"){winner= "user"}
+if(computerChoice==="rock"&&userChoice==="scissors"){winner="computer"}
+if(computerChoice==="rock"&&userChoice==="rock"){winner="tie"}
    
        
    });
