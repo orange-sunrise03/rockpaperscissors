@@ -15,83 +15,57 @@ var winner ="";
 
 var randomNumber = 0;
 
-$("#shoot").click(function(){
-  
- userChoice=  $("#input").val();
-      console.log(userChoice);
+$("#shoot").click(function() {
+    
+    userChoice = $("input").val();
     $("#userChoice").text(userChoice);
     
     randomNumber= Math.random();
     
-    if(randomNumber<0.333) {
+    if (randomNumber < 0.333) {
         computerChoice= "rock";
-      
-  
-   }else if (randomNumber<0.6666) {
-       computerChoice="paper";
-       
-   }else { computerChoice="scissors";
+        $("#computerChoice").text("rock");
+    } else if (randomNumber < 0.6666) {
+        $("#computerChoice").text("paper");
+        computerChoice="paper";
+    } else {
+       $("#computerChoice").text("scissors");
+       computerChoice="scissors";
     }
    
-//   if (userChoice === "rock"){
-//       if(computerChoice==="rock") {
-//           winner="tie";
-//       }
-       
-//       if(computerChoice==="paper") {
-//           winner="computer";
-//       }   
-//       if(computerChoice==="scissors") {
-//           winner="user";
-//       }   
-//   } else if (userChoice === "paper"){
-//       if(computerChoice==="paper") {
-//           winner="tie";
-//       }
+    if (userChoice === computerChoice) {
+        $("#result").text("tie");
+        winner="tie"
+    } else if (computerChoice==="rock") {
         
-           
-//             if (computerChoice === "scissors"){
-//           winner="computer";
-//             }
-           
+        if (userChoice === "paper") {
+            winner = "user";
+            $("#result").text("user");
+        } else if (userChoice === "scissors") {
+            winner = "computer";
+            $("#result").text("computer");
+        }
+
+    } else if (computerChoice === "paper") {
         
-//       if(computerChoice==="rock") {
-//           winner="user";
-//       }
-       
-//   }
-   
-//   else {
-//         if(computerChoice==="paper") {
-//           winner="user";
-//       }
+        if (userChoice === "rock") {
+            winner = "computer";
+            $("#result").text("computer");
+        } else if (userChoice === "scissors") {
+            winner="user"; 
+            $("#result").text("user"); 
+        }
+    } else if (computerChoice === "scissors") {
         
-           
-//             if (computerChoice === "scissors"){
-//           winner="tie";
-//             }
-           
+        if (userChoice === "rock") {
+            winner = "user";
+            $("#result").text("user");
+        } else if (userChoice === "paper") {
+            winner = "computer";
+            $("#result").text("computer");
+        }
         
-//       if(computerChoice==="rock") {
-//           winner="computer";
-//       }  
-    
-       
-//   }
-       
-    alert(winner)  
-       
-       
-       
-       
-           
-         
-         
-       
-       
-   if(computerChoice==="rock"&&userChoice==="paper"){winner= "user"}
-if(computerChoice==="rock"&&userChoice==="scissors"){winner="computer"}
-if(computerChoice==="rock"&&userChoice==="rock"){winner="tie"}
+    }
    
        
    });
